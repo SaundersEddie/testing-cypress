@@ -18,3 +18,9 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// cy.on('uncaught:exception', (err, runnable) => {
+//     expect (err.message).to.include("SyntaxError:")
+//     done()
+//     return false
+//   })
