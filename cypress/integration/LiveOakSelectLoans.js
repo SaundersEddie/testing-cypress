@@ -5,22 +5,21 @@
 
 ///<reference type = "cypress">
 
-describe ('Testing Live Oak Bank Loans page', () => {
+describe ('Testing Live Oak Bank Navbar', () => {
     beforeEach(() => {
+        // Some wierd error on the main site, this will allow Cypress
+        // to contiue executing.
         cy.on('uncaught:exception', (err, runnable) => {
-            expect (err.message).to.include("SyntaxError:")
-            done()
-            return false
+        return false
         })
         cy.openLiveOakSite();
     });
 
-    it ('Confirm we can open the small-business-loans page', () => {
-        console.log ("Inside Banks");
+    it ('Navbar Testing', () => {
+        let loansItem = cy.contains("Loans")
+        
+        loansItem.click();
 
-        cy.get('#menu-item-54 > a').click();
-
-        // cy.contains("#navWrap", "LOANS").click()
     })
 
 
