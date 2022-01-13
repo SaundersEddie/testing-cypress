@@ -1,18 +1,21 @@
 // ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
 // For more comprehensive examples of custom
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-Cypress.Commands.add('openUKCovidSite', (done) => {
+Cypress.Commands.add('openUKCovidSite', () => {
+    // Open Base Site then close out cookie request and hide the banner
     cy.visit('https://coronavirus.data.gov.uk/');
-    cy.url().should('eq','https://coronavirus.data.gov.uk/AM')
+    cy.url().should('eq','https://coronavirus.data.gov.uk/')
+    cy.get("#reject-cookies").click()
+    cy.get("#hide-cookie-decision").click()
 })
 
+Cypress.Commands.add('UKCovidAPI', () => {
+    // https://api.coronavirus.data.gov.uk/v1/data
+    // This will not likely need to be used, but using it to store API link
+})
 
 //
 //
