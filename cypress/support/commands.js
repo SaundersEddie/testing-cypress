@@ -8,12 +8,9 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-Cypress.Commands.add('openLiveOakSite', (done) => {
-  
-
-    cy.visit('https://www.liveoakbank.com/');
-    // cy.title().should ('contain', 'Live Oak Bank');
-    cy.url().should('eq','https://www.liveoakbank.com/')
+Cypress.Commands.add('openUKCovidSite', (done) => {
+    cy.visit('https://coronavirus.data.gov.uk/');
+    cy.url().should('eq','https://coronavirus.data.gov.uk/AM')
 })
 
 
